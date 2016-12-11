@@ -1,14 +1,15 @@
 language: android
-jdk: oraclejdk8
-sudo: required # for installing new libstdc++6
 android:
   components:
-    - tools
-    - build-tools-23.0.2
-    - android-23
-    - extra-google-m2repository
-    - extra-android-m2repository
-    - extra-android-support
+    - build-tools-20.0.0
+    - android-L
+    - sys-img-armeabi-v7a-android-tv-l
+    - add-on
+    - extra
+  licenses:
+    - 'android-sdk-preview-license-52d11cd2'
+    - 'android-sdk-license-.+'
+    - 'google-gdk-license-.+'
 
 # Emulator Management: Create, Start and Wait
 before_script:
@@ -16,6 +17,3 @@ before_script:
   - emulator -avd test -no-audio -no-window &
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
-
-script:
-    echo hi
