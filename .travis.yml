@@ -1,5 +1,6 @@
 language: android
 jdk: oraclejdk7
+sudo: required
 env:
     matrix:
         - ANDROID_TARGET=android-21 ANDROID_ABI=armeabi-v7a
@@ -31,4 +32,4 @@ before_script:
     - adb shell input keyevent 82 &
 
 script:
-    - /root/android-sdk-linux/platform-tools/adb devices
+    - sudo /root/android-sdk-linux/platform-tools/adb devices
