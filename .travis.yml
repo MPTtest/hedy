@@ -32,4 +32,6 @@ before_script:
 
 script:
     - adb devices
-    - ls
+    - adb install ./Calculator.apk
+    - adb shell am start -n com.example.calculator/com.example.calculator.MainActivity
+    - adb uninstall com.example.calculator
